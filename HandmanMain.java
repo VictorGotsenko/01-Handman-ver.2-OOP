@@ -3,6 +3,6 @@
  */
 public class HandmanMain {
     public static void main(String[] args) {
-        int i = 5;
+        int i = 3;
     }
 }
