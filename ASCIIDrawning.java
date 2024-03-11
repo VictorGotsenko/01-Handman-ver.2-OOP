@@ -1,22 +1,25 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-
 /**
  * Draws an object"Handman" using ASCII characters.
  */
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class ASCIIDrawning {
-    ArrayList<String> artList = new ArrayList<String>(Arrays.asList(
-            " ____",
-            " |  |",
-            " |  ",
-            " |  ",
-            " |  ",
-            " |  ",
-            "/|" + "\\"));
+    ArrayList<String> artList = new ArrayList<String>(
+            Arrays.asList(
+                    " ____",
+                    " |  |",
+                    " |  ",
+                    " |  ",
+                    " |  ",
+                    " |  ",
+                    "/|" + "\\"));
+
     void printHangman(int iError) {
         if (iError > 6) {
-            System.out.println("Количество ошибок равно " + iError + " печать виселицы невозможна!");
+            System.out.println("Количество ошибок равно " + iError +
+                               " печать виселицы невозможна!");
             return;
         }
         switch (iError) {
@@ -48,16 +51,15 @@ public class ASCIIDrawning {
         }
     }
 
-    public static void main(String[] args) {
-        ASCIIDrawning draw = new ASCIIDrawning();
-        draw.printHangman(0);
-        draw.printHangman(1);
-        draw.printHangman(2);
-        draw.printHangman(3);
-        draw.printHangman(4);
-        draw.printHangman(5);
-        draw.printHangman(6);
-        draw.printHangman(7);
-
-    }
+//    public static void main(String[] args) {
+//        ASCIIDrawning draw = new ASCIIDrawning();
+//        draw.printHangman(0);
+//        draw.printHangman(1);
+//        draw.printHangman(2);
+//        draw.printHangman(3);
+//        draw.printHangman(4);
+//        draw.printHangman(5);
+//        draw.printHangman(6);
+//        draw.printHangman(7);
+//    }
 }
