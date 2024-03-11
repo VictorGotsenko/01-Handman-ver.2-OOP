@@ -4,6 +4,7 @@ import java.util.Arrays;
 /**
  * Draws an object"Handman" using ASCII characters.
  */
+
 public class ASCIIDrawning {
     ArrayList<String> artList = new ArrayList<String>(Arrays.asList(
             " ____",
@@ -13,7 +14,6 @@ public class ASCIIDrawning {
             " |  ",
             " |  ",
             "/|" + "\\"));
-
     void printHangman(int iError) {
         if (iError > 6) {
             System.out.println("Количество ошибок равно " + iError + " печать виселицы невозможна!");
@@ -43,15 +43,21 @@ public class ASCIIDrawning {
             default:
                 break;
             }
-
-        // вывод с использованием синтаксиса foreach если не нужны индексы элементов
         for (String c : artList ) {
             System.out.println(c);
         }
     }
 
-//    public static void main(String[] args) {
-//        ASCIIDrawning draw = new ASCIIDrawning();
-//        draw.printHangman(0);
-//    }
+    public static void main(String[] args) {
+        ASCIIDrawning draw = new ASCIIDrawning();
+        draw.printHangman(0);
+        draw.printHangman(1);
+        draw.printHangman(2);
+        draw.printHangman(3);
+        draw.printHangman(4);
+        draw.printHangman(5);
+        draw.printHangman(6);
+        draw.printHangman(7);
+
+    }
 }
