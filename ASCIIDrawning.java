@@ -16,13 +16,13 @@ public class ASCIIDrawning {
                     " |  ",
                     "/|" + "\\"));
 
-    void printHangman(int iError) {
-        if (iError > 6) {
-            System.out.println("Количество ошибок равно " + iError +
+    void printHangman(int unsuccessfulAttempts) {
+        if (unsuccessfulAttempts > 6) {
+            System.out.println("Количество ошибок равно " + unsuccessfulAttempts +
                                " печать виселицы невозможна!");
             return;
         }
-        switch (iError) {
+        switch (unsuccessfulAttempts) {
             case 0:
                 break;
             case 1:
