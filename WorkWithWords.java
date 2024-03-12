@@ -5,6 +5,7 @@
 import java.io.*;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class WorkWithWords {
     ArrayList<String> wordsDictionary = new ArrayList<>();
@@ -63,8 +64,20 @@ public class WorkWithWords {
         }
         return firstWord;
     }
+    String guessTheWord(ArrayList<String> wordsDictionary) {
+        Random numbersRandom = new Random();
+        int randomInteger = numbersRandom.nextInt(wordsDictionary.size());                                                      // random int
+        String guessedTheWord = wordsDictionary.get(randomInteger);
+        return guessedTheWord;
+    }
+
 public static void main(String[] args) {
     WorkWithWords wordwork = new WorkWithWords();
     wordwork.readWordsFromFile();
+    for (String st : wordwork.wordsDictionary) {
+        System.out.println(st);
+    }
+    System.out.print("     Загаданно слово: ");
+    System.out.println(wordwork.guessTheWord(wordwork.wordsDictionary));
  }
 } //EoClass
