@@ -11,6 +11,7 @@ public class WorkWithWords {
     ArrayList<String> wordsDictionary = new ArrayList<>();
     int maxWordLenght = 10;
     int minWordLenght = 5;
+    String guessedTheWord;
     //    read words from file
     void readWordsFromFile() {
         String workDir = "src";
@@ -64,11 +65,20 @@ public class WorkWithWords {
         }
         return firstWord;
     }
-    String guessTheWord(ArrayList<String> wordsDictionary) {
+    void guessTheWord() {
         Random numbersRandom = new Random();
-        int randomInteger = numbersRandom.nextInt(wordsDictionary.size());                                                      // random int
-        String guessedTheWord = wordsDictionary.get(randomInteger);
-        return guessedTheWord;
+        while (guessedTheWord==null) {
+            int randomInteger = numbersRandom.nextInt(wordsDictionary.size());                                                      // random int
+            guessedTheWord = wordsDictionary.get(randomInteger);
+        }
+    }
+    boolean isCharInGuessWord(char ch) {
+        for (int i = 0; i < guessedTheWord.length(); i++) {
+            if (ch == guessedTheWord.charAt(i)) {
+                return true;
+            }
+        }
+        return false;
     }
 
 public static void main(String[] args) {
@@ -77,7 +87,11 @@ public static void main(String[] args) {
     for (String st : wordwork.wordsDictionary) {
         System.out.println(st);
     }
+    wordwork.guessTheWord();
     System.out.print("     Загаданно слово: ");
-    System.out.println(wordwork.guessTheWord(wordwork.wordsDictionary));
+    System.out.println(wordwork.guessedTheWord);
+    char y = 'б';
+    System.out.println("есть ли символ в загаданном слове? "
+            + wordwork.isCharInGuessWord(y));
  }
 } //EoClass
