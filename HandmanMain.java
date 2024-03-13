@@ -8,6 +8,9 @@ public class HandmanMain {
 
     ArrayList<Character> charsOpenInGuessWord = new ArrayList<>();
     public static void main(String[] args) {
-        int i = 3;
+        WorkWithWords workWithWords = new WorkWithWords();
+        GameLogic gameLogic = new GameLogic();
+        ASCIIDrawning asciiDrawning = new ASCIIDrawning();
+
     }
 }

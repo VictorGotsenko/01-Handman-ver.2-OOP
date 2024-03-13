@@ -59,14 +59,13 @@ class GameLogic {
         return inputFromKeyboard.charAt(0);
     }
 
-    public static void main(String[] args) {
-        GameLogic gp = new GameLogic();
-        gp.welcomeInGame();
-        System.out.println(gp.inviteGame());
-        String stG = "apple";
-        gp.fillCollectionWithMask(stG);
-        gp.printCollectionWithMask();
-        System.out.println("Input char: " + gp.getCharFromKeyboard());
-
-    }
+//    public static void main(String[] args) {
+//        GameLogic gp = new GameLogic();
+//        gp.welcomeInGame();
+//        System.out.println(gp.inviteGame());
+//        String stG = "apple";
+//        gp.fillCollectionWithMask(stG);
+//        gp.printCollectionWithMask();
+//        System.out.println("Input char: " + gp.getCharFromKeyboard());
+//    }
 }//eoc
