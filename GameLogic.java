@@ -1,9 +1,11 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
  * Task04(GameLogicClass) on 13.03.2024.
  */
 class GameLogic {
+    ArrayList<Character> charsGuessWord = new ArrayList<>();
     void welcomeInGame() {
         System.out.println(" Добро пожаловать в игру Виселица");
     }
@@ -34,10 +36,25 @@ class GameLogic {
         return isGaming;
     }
 
+    void fillCollectionWithMask(String guessedTheWord) {
+        for (int i = 0; i < guessedTheWord.length(); i++) {
+            charsGuessWord.add('_');
+        }
+    }
+
+    void printCollectionWithMask() {
+        System.out.println("Загаданное слово...");
+        for (Character ch : charsGuessWord) {
+            System.out.print(ch + " ");
+        }
+    }
+
     public static void main(String[] args) {
         GameLogic gp = new GameLogic();
         gp.welcomeInGame();
         System.out.println(gp.inviteGame());
-
+        String stG = "apple";
+        gp.fillCollectionWithMask(stG);
+        gp.printCollectionWithMask();
     }
 }//eoc

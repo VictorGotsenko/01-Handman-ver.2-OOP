@@ -81,6 +81,9 @@ class WorkWithWords {
         }
         return false;
     }
+    String getGuessedTheWord() {
+        return guessedTheWord;
+    }
 
 public static void main(String[] args) {
     WorkWithWords wordwork = new WorkWithWords();
