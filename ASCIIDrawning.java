@@ -5,7 +5,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class ASCIIDrawning {
+class ASCIIDrawning {
     ArrayList<String> artList = new ArrayList<String>(
             Arrays.asList(
                     " ____",

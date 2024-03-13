@@ -7,7 +7,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class WorkWithWords {
+class WorkWithWords {
     ArrayList<String> wordsDictionary = new ArrayList<>();
     int maxWordLenght = 10;
     int minWordLenght = 5;
