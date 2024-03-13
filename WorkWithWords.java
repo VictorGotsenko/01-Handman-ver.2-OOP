@@ -11,7 +11,7 @@ public class WorkWithWords {
     ArrayList<String> wordsDictionary = new ArrayList<>();
     int maxWordLenght = 10;
     int minWordLenght = 5;
-    String guessedTheWord;
+    String guessedTheWord = "";
     //    read words from file
     void readWordsFromFile() {
         String workDir = "src";
@@ -24,7 +24,7 @@ public class WorkWithWords {
             while ((readedString = reader.readLine()) != null) { // читаю строки в цикле
                 readedString = readedString.toLowerCase();
                 readedString = wordsFiltering(readedString);
-                if (!(readedString == null)) {
+                if (!(readedString == "")) {
                     wordsDictionary.add(readedString);
                 }
             }
@@ -48,7 +48,7 @@ public class WorkWithWords {
         if ((firstWord.length() < minWordLenght) || (firstWord.length() > maxWordLenght)) {
             System.out.println("Слово: " + firstWord
                     + " - не подходит под диапазон от 5 до 10 букв. И было отброшено.");
-            return firstWord = null;
+            return firstWord = "";
         }
     //    проверка - слово содержит только русские буквы ?
         char tempChap;
@@ -59,7 +59,7 @@ public class WorkWithWords {
                     continue;
                 } else {
                     System.out.println("Слово: " + firstWord + " содержит недопустимые символы и было отброшено ");
-                    return firstWord = null;
+                    return firstWord = "";
                   }
             }
         }
@@ -67,7 +67,7 @@ public class WorkWithWords {
     }
     void guessTheWord() {
         Random numbersRandom = new Random();
-        while (guessedTheWord==null) {
+        while (guessedTheWord=="") {
             int randomInteger = numbersRandom.nextInt(wordsDictionary.size());                                                      // random int
             guessedTheWord = wordsDictionary.get(randomInteger);
         }
