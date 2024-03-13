@@ -6,6 +6,7 @@ import java.util.Scanner;
  */
 class GameLogic {
     ArrayList<Character> charsGuessWord = new ArrayList<>();
+    Scanner cReadFromKeyboard = new Scanner(System.in);
     void welcomeInGame() {
         System.out.println(" Добро пожаловать в игру Виселица");
     }
@@ -13,7 +14,6 @@ class GameLogic {
         boolean isGaming = false;
         String tempReadFromKeyboadr;
         char choseKey = 2;
-        Scanner cReadFromKeyboard = new Scanner(System.in);
         System.out.println("Начать игру нажмите 1 / Для Выхода нажмите 2");
         while (choseKey != '1') {
             tempReadFromKeyboadr = cReadFromKeyboard.nextLine();
@@ -49,6 +49,16 @@ class GameLogic {
         }
     }
 
+    char getCharFromKeyboard() {
+        String inputFromKeyboard = "";
+        while (!inputFromKeyboard.matches("[а-я||ё]")) {
+            System.out.print("Введите одну русскую букву в нижнем регистре: ");
+            inputFromKeyboard = cReadFromKeyboard.nextLine();
+            inputFromKeyboard = inputFromKeyboard.toLowerCase();
+        }
+        return inputFromKeyboard.charAt(0);
+    }
+
     public static void main(String[] args) {
         GameLogic gp = new GameLogic();
         gp.welcomeInGame();
@@ -56,5 +66,7 @@ class GameLogic {
         String stG = "apple";
         gp.fillCollectionWithMask(stG);
         gp.printCollectionWithMask();
+        System.out.println("Input char: " + gp.getCharFromKeyboard());
+
     }
 }//eoc
