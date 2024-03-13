@@ -21,7 +21,8 @@ public class WorkWithWords {
             File file = new File(String.valueOf(Paths.get(workDir, fileNameDictionaryWords).toFile()));
             FileReader fr = new FileReader(file);
             BufferedReader reader = new BufferedReader(fr);
-            while ((readedString = reader.readLine()) != null) { // читаю строки в цикле
+    //    читаю строки в цикле
+            while ((readedString = reader.readLine()) != null) {
                 readedString = readedString.toLowerCase();
                 readedString = wordsFiltering(readedString);
                 if (!(readedString == "")) {
