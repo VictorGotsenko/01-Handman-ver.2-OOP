@@ -42,6 +42,21 @@ class GameLogic {
         }
     }
 
+    void addOpenCharInCollectionWithMask(Character openChar, String guessedTheWord) {
+        for (int i = 0; i < guessedTheWord.length(); i++) {
+            if (openChar == guessedTheWord.charAt(i)) {
+                charsGuessWord.set(i, openChar);
+            }
+        }
+    }
+
+    boolean isMaskInCollectionGuessWord(ArrayList<Character> charsGuessWord) {
+        if (charsGuessWord.contains('_')) {
+            return true;
+        }
+        return false;
+    }
+
     void printCollectionWithMask() {
         System.out.println("Загаданное слово...");
         for (Character ch : charsGuessWord) {
@@ -60,13 +75,18 @@ class GameLogic {
         return inputFromKeyboard.charAt(0);
     }
 
-//    public static void main(String[] args) {
-//        GameLogic gp = new GameLogic();
+    public static void main(String[] args) {
+        GameLogic gp = new GameLogic();
 //        gp.welcomeInGame();
 //        System.out.println(gp.inviteGame());
-//        String stG = "apple";
-//        gp.fillCollectionWithMask(stG);
-//        gp.printCollectionWithMask();
+        String stG = "мяч";
+        gp.fillCollectionWithMask(stG);
+        gp.printCollectionWithMask();
 //        System.out.println("Input char: " + gp.getCharFromKeyboard());
-//    }
+        while (gp.isMaskInCollectionGuessWord(gp.charsGuessWord)) {
+            gp.printCollectionWithMask();
+            gp.addOpenCharInCollectionWithMask(gp.getCharFromKeyboard(),stG);
+        }
+
+    }
 }//eoc
