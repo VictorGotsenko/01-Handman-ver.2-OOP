@@ -47,6 +47,7 @@ class GameLogic {
         for (Character ch : charsGuessWord) {
             System.out.print(ch + " ");
         }
+        System.out.println();
     }
 
     char getCharFromKeyboard() {

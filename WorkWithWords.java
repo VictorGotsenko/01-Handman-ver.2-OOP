@@ -8,10 +8,10 @@ import java.util.ArrayList;
 import java.util.Random;
 
 class WorkWithWords {
-    ArrayList<String> wordsDictionary = new ArrayList<>();
-    int maxWordLenght = 10;
-    int minWordLenght = 5;
-    String guessedTheWord = "";
+    private ArrayList<String> wordsDictionary = new ArrayList<>();
+    private int maxWordLenght = 10;
+    private int minWordLenght = 5;
+    private String guessedTheWord = "";
     //    read words from file
     void readWordsFromFile() {
         String workDir = "src";
@@ -36,6 +36,7 @@ class WorkWithWords {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        System.out.println();
     }
     String wordsFiltering(String wordsRawDictionary) {
     //   сколько слов в строке?
